@@ -75,3 +75,16 @@ weekly_averages = data.groupby('Week').agg({
 }).reset_index()
 
 print(weekly_averages.head())
+
+fig1 = px.line(weekly_averages, x='Week', y=['New users', 'Returning users'], markers=True,
+               labels={'value': 'Average Number of Users'}, title='Weekly Average of New vs. Returning Users')
+fig1.update_xaxes(title='Week of the Year')
+fig1.update_yaxes(title='Average Number of Users')
+
+fig2 = px.line(weekly_averages, x='Week', y=['Duration Day 1', 'Duration Day 7'], markers=True,
+               labels={'value': 'Average Duration'}, title='Weekly Average of Duration (Day 1 vs. Day 7)')
+fig2.update_xaxes(title='Week of the Year')
+fig2.update_yaxes(title='Average Duration')
+
+fig1.show()
+fig2.show()
