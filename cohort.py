@@ -61,3 +61,17 @@ plt.figure(figsize=(10, 8))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Correlation Matrix of Variables')
 plt.show()
+
+# PART FOUR 
+# Grouping data by week
+data['Week'] = data['Date'].dt.isocalendar().week
+
+# Calculating weekly averages
+weekly_averages = data.groupby('Week').agg({
+    'New users': 'mean',
+    'Returning users': 'mean',
+    'Duration Day 1': 'mean',
+    'Duration Day 7': 'mean'
+}).reset_index()
+
+print(weekly_averages.head())
