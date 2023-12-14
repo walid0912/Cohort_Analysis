@@ -12,3 +12,6 @@ print(missing_values)
 data_types = data.dtypes
 print(data_types)
 
+
+# Convert 'Date' column to datetime format
+data['Date'] = pd.to_datetime(data['Date'], format='%d/%m/%Y')
