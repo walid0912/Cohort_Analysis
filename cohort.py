@@ -15,3 +15,7 @@ print(data_types)
 
 # Convert 'Date' column to datetime format
 data['Date'] = pd.to_datetime(data['Date'], format='%d/%m/%Y')
+
+# Display the descriptive statistics of the dataset
+descriptive_stats = data.describe()
+print(descriptive_stats)
