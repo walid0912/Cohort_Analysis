@@ -43,3 +43,8 @@ fig.update_layout(title='Trend of New and Returning Users Over Time',
                   yaxis_title='Number of Users')
 
 fig.show()
+
+
+fig = px.line(data_frame=data, x='Date', y=['Duration Day 1', 'Duration Day 7'], markers=True, labels={'value': 'Duration'})
+fig.update_layout(title='Trend of Duration (Day 1 and Day 7) Over Time', xaxis_title='Date', yaxis_title='Duration', xaxis=dict(tickangle=-45))
+fig.show()
