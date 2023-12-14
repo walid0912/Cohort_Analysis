@@ -48,3 +48,16 @@ fig.show()
 fig = px.line(data_frame=data, x='Date', y=['Duration Day 1', 'Duration Day 7'], markers=True, labels={'value': 'Duration'})
 fig.update_layout(title='Trend of Duration (Day 1 and Day 7) Over Time', xaxis_title='Date', yaxis_title='Duration', xaxis=dict(tickangle=-45))
 fig.show()
+
+# PART THREE
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Correlation matrix
+correlation_matrix = data.corr()
+
+# Plotting the correlation matrix
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title('Correlation Matrix of Variables')
+plt.show()
